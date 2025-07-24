@@ -4,9 +4,16 @@
     $role = "master";
     $halaman = "list";
     $judul_halaman = "Edit Peta - Master";
+    $jenis_peta = htmlspecialchars($_GET['j']);
+
 
     require_once "../helper/footer.php";
     require_once "../helper/header.php";
+
+    if (!isset($_GET['j'])) {
+        header("Location: index.php");
+        exit;
+    }
 
 ?>
 
@@ -31,16 +38,9 @@
             <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionTambahData">
             <div class="accordion-body">
                 <form method="post" class="d-grid gap-3">
-                    <select name="wilayah" class="form-select">
-                        <option selected>Pilih Jenis Peta..</option>
-                        <option value="PGAW">Peta Global Area Wilayah</option>
-                        <option value="PGAJT">Peta Global Area Jenis Tanam</option>
-                        <option value="PGAAKAPG">Peta Global Area Komoditi All PG</option>
-                        <option value="PGP">Peta Global Polos</option>
-                        <option value="PGSKNU">Peta Global Selain Komoditi Non Utama</option>
-                        <option value="PGST">Peta Global Status Tanaman</option>
-                        <option value="BA">Bolder Area</option>
-                    </select>
+                    <input class="form-control" type="text" value="<?=kamusPeta($jenis_peta)?>" disabled>
+                    <input type="hidden" name="wilayah" value="<?=$jenis_peta?>">
+
                     <select name="pg" class="form-select">
                             <option selected>PG..</option>
                             <option value="PG1">PG1</option>
@@ -109,7 +109,7 @@
                                         Aksi
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item text-primary" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-primary" href="edit_peta.php?j=<?=$jenis_peta?>">Edit</a></li>
                                         <li><a class="dropdown-item text-danger" href="#">Hapus</a></li>
                                     </ul>
                                 </div>
@@ -130,7 +130,7 @@
                                         Aksi
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item text-primary" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item text-primary" href="edit_peta.php?j=<?=$jenis_peta?>">Edit</a></li>
                                         <li><a class="dropdown-item text-danger" href="#">Hapus</a></li>
                                     </ul>
                                 </div>

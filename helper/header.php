@@ -1,3 +1,34 @@
+<?php
+    function kamusPeta($singkatan){
+        switch ($singkatan) {
+            case 'PGAW':
+                return 'Peta Global Area Wilayah';
+                break;
+            case 'PGAJT':
+                return 'Peta Global Area Jenis Tanaman';
+                break;
+            case 'PGAKAPG':
+                return 'Peta Global Area Komoditi All PG';
+                break;
+            case 'PGAP':
+                return 'Peta Global Polos';
+                break;
+            case 'PGSKNU':
+                return 'Peta Global Selain Komoditi Non Utama';
+                break;
+            case 'PGST':
+                return 'Peta Global Status Tanaman';
+                break;
+            case 'BA':
+                return 'Bolder Area';
+                break;
+            default:
+                return "tidak ada di kamus";
+                break;
+        }
+    }
+?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>

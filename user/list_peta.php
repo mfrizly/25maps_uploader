@@ -3,9 +3,16 @@
     $role = "user";
     $halaman = "list";
     $judul_halaman = "List Peta - User";
+    $jenis_peta = htmlspecialchars($_GET['j']);
+
 
     require_once "../helper/header.php";
     require_once "../helper/footer.php";
+
+    if (!isset($_GET['j'])) {
+    header("Location: index.php");
+    exit;
+}
 
 ?>
 
@@ -14,8 +21,8 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Peta Global Area Wilayah</li>
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>            
+            <li class="breadcrumb-item active" aria-current="page"><?= kamusPeta($jenis_peta)?></li>
         </ol>
     </nav>
 

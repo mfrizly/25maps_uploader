@@ -1,5 +1,28 @@
 <?php
 require_once "helper/password_view.php";
+
+
+session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] == "user") {
+        header("Location: user/index.php");
+        exit;    
+    }
+    if ($_SESSION['role'] == "admin") {
+        header("Location: admin/index.php");
+        exit;    
+    }
+    if ($_SESSION['role'] == "master") {
+        header("Location: master/index.php");
+        exit;    
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +41,29 @@ require_once "helper/password_view.php";
                 <div class="card-header text-center">Silahkan Masuk</div>
 
                 <div class="card-body">
-                    <form method="post" class="d-grid gap-3">
-                        <input type="text" class="form-control" name="username" placeholder="Nama Pengguna">
-                        <input type="password" id="password" class="form-control" name="password" placeholder="Kata Sandi">
-                        <input type="hidden" name="token">
+                    <form method="post" action="auth.php" class="d-grid gap-3">
+                        
+                        <?php
+                            if (isset($_SESSION['errors'])) { 
+                        ?>
+                            <div class="alert alert-warning">
+                                <ul>
+                                    <?php 
+                                    foreach ($_SESSION['errors'] as $e) { ?>
+                                            <li><?=htmlspecialchars($e)?></li>
+                                    <?php 
+                                        }
+                                    ?>
+                                </ul>
+                        </div>
+                        <?php
+                            unset($_SESSION['errors']);
+                            } else { $error = null; }
+                        ?>
+
+                        <input type="text" class="form-control" name="username" placeholder="Nama Pengguna" required>
+                        <input type="password" id="password" class="form-control" name="password" placeholder="Kata Sandi" required>
+                        <input type="hidden" name="token" value="<?=$_SESSION['csrf_token']?>" required>
                         <div>
                             <input type="checkbox" id="togglePassword"> <span>Lihat Kata Sandi</span>
                         </div>

@@ -1,7 +1,9 @@
 <?php
 
-    $pengguna = "Admin";
-    $role = "admin";
+    session_start();
+    
+    $pengguna = $_SESSION['user'];
+    $role = $_SESSION['role'];
     $halaman = "index";
     $judul_halaman = "Selamat Datang Admin";
 

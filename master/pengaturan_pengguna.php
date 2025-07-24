@@ -1,11 +1,14 @@
 <?php
-    $pengguna = "master";
+    $pengguna = "Master";
     $role = "master";
     $halaman = "pengaturan_pengguna";
+    $judul_halaman = "Pengaturan Pengguna";
 
     require_once "../helper/header.php";
     require_once "../helper/footer.php";
-    require_once "../helper/password_view.php"
+    require_once "../helper/password_view.php";
+
+
 ?>
 
 <div class="container">

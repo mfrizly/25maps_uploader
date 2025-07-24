@@ -4,9 +4,16 @@
     $role = "master";
     $halaman = "edit";
     $judul_halaman = "Edit Peta - Master";
+    $jenis_peta = htmlspecialchars($_GET['j']);
+
 
     require_once "../helper/footer.php";
     require_once "../helper/header.php";
+
+    if (!isset($_GET['j'])) {
+        header("Location: index.php");
+        exit;
+    }
 
 ?>
 
@@ -16,7 +23,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">PG</li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="list_peta.php?j=<?=$jenis_peta?>"><?=kamusPeta($jenis_peta)?></a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Peta</li>
             </ol>
         </nav>
@@ -26,14 +33,13 @@
             <div class="card-body">
                 <form method="post" class="d-grid gap-3">
                     <select name="wilayah" class="form-select">
-                        <option selected>Pilih Jenis Peta..</option>
-                        <option value="PGAW">Peta Global Area Wilayah</option>
-                        <option value="PGAJT">Peta Global Area Jenis Tanam</option>
-                        <option value="PGAAKAPG">Peta Global Area Komoditi All PG</option>
-                        <option value="PGP">Peta Global Polos</option>
-                        <option value="PGSKNU">Peta Global Selain Komoditi Non Utama</option>
-                        <option value="PGST">Peta Global Status Tanaman</option>
-                        <option value="BA">Bolder Area</option>
+                        <option value="PGAW" <?php if ($jenis_peta == "PGAW") echo "selected"?>>Peta Global Area Wilayah</option>
+                        <option value="PGAJT" <?php if ($jenis_peta == "PGAJT") echo "selected"?>>Peta Global Area Jenis Tanam</option>
+                        <option value="PGAAKAPG" <?php if ($jenis_peta == "PGAAKAPG") echo "selected"?>>Peta Global Area Komoditi All PG</option>
+                        <option value="PGP" <?php if ($jenis_peta == "PGP") echo "selected"?> >Peta Global Polos</option>
+                        <option value="PGSKNU" <?php if ($jenis_peta == "PGSKNU") echo "selected"?>>Peta Global Selain Komoditi Non Utama</option>
+                        <option value="PGST" <?php if ($jenis_peta == "PGST") echo "selected"?>>Peta Global Status Tanaman</option>
+                        <option value="BA" <?php if ($jenis_peta == "BA") echo "selected"?>>Bolder Area</option>
                     </select>
                     <select name="pg" class="form-select">
                         <option selected>PG..</option>
