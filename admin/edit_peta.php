@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    
     require_once "../helper/session_protect.php";
     allow_role(['admin']);
 

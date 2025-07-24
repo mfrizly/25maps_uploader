@@ -34,7 +34,7 @@ foreach ($users as $user) {
             case 'user':
                 header("Location: ../user/index.php"); exit;
             case 'master':
-                header("Location: ../ master/index.php"); exit;
+                header("Location: ../master/index.php"); exit;
         }
     }
 }
