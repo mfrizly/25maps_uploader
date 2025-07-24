@@ -10,7 +10,7 @@ function footerWeb($halaman = null){
             <script>
 
                 $(document).ready(function() {
-                $('#tablePeta').DataTable();
+                $('#table').DataTable();
             });
 
             </script>

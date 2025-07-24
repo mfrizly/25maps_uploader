@@ -84,7 +84,7 @@
         <div class="card-header fw-bold">Peta..</div>
         <div class="card-body">
             <div class="table-responsive p-2">
-                <table id="tablePeta" class="table table-hover">
+                <table id="table" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>

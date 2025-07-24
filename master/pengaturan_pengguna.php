@@ -6,7 +6,7 @@
 
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
-    $halaman = "pengaturan_pengguna";
+    $halaman = "list";
     $judul_halaman = "Pengaturan Pengguna";
 
     require_once "../helper/header.php";
@@ -77,7 +77,7 @@
         <div class="card-header fw-bold">List Pengguna</div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tablePengguna" class="table table-hover">
+                <table id="table" class="table table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>
