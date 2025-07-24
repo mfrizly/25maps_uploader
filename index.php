@@ -8,29 +8,27 @@ require_once "helper/csrf_token.php";
 require_once "helper/password_view.php";
 require_once "helper/redirect_helper.php";
 
-$data = get_redirect_data();
-$errors = $data['errors'] ?? [] ;
 
-
-$csrf_token = generate_csrf_token();
 
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == "user") {
-        header("Location: user/index.php");
-        exit;    
+       redirect_with("user/index.php");  
     }
     if ($_SESSION['role'] == "admin") {
-        header("Location: admin/index.php");
-        exit;    
+        redirect_with("admin/index.php");
     }
     if ($_SESSION['role'] == "master") {
-        header("Location: master/index.php");
-        exit;    
+        redirect_with("master/index.php");
     }
 }
 
 $_SESSION['_auth_access'] = true;
 
+$data = get_redirect_data();
+$errors = $data['errors'] ?? [] ;
+
+
+$csrf_token = generate_csrf_token();
 
 ?>
 

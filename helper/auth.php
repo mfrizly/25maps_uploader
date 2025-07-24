@@ -53,9 +53,6 @@ if (!$found) {
     $errors[] = "Username atau password salah.";
 }
 
-
-
-
 unset($_SESSION['csrf_token']);
 
 if (!empty($errors)) {
