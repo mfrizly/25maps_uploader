@@ -1,14 +1,17 @@
 <?php
 session_start();
 
-if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
+
+if (!isset($_SESSION['_auth_access'])) {
     http_response_code(403);
-    exit('Akses langsung tidak diizinkan.');
+    exit('Akses langsung dilarang.');
 }
 
+unset($_SESSION['_auth_access']); 
 
 require_once "csrf_token.php";
 require_once "users.php";
+require_once "redirect_helper.php";
 
 $errors = []; 
 
@@ -56,7 +59,5 @@ if (!$found) {
 unset($_SESSION['csrf_token']);
 
 if (!empty($errors)) {
-    $_SESSION['errors'] = $errors;
-    header("Location: ../index.php");
-    exit;
+    redirect_with("../index.php", ['errors' => $errors]);
 }

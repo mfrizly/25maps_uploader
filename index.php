@@ -1,9 +1,17 @@
 <?php
-require_once "helper/password_view.php";
-
-
 session_start();
+
+
+
+
 require_once "helper/csrf_token.php";
+require_once "helper/password_view.php";
+require_once "helper/redirect_helper.php";
+
+$data = get_redirect_data();
+$errors = $data['errors'] ?? [] ;
+
+
 $csrf_token = generate_csrf_token();
 
 if (isset($_SESSION['role'])) {
@@ -20,6 +28,8 @@ if (isset($_SESSION['role'])) {
         exit;    
     }
 }
+
+$_SESSION['_auth_access'] = true;
 
 
 ?>
@@ -42,23 +52,17 @@ if (isset($_SESSION['role'])) {
                 <div class="card-body">
                     <form method="post" action="helper/auth.php" class="d-grid gap-3">
                         
-                        <?php
-                            if (isset($_SESSION['errors'])) { 
-                        ?>
+                        <?php if (!empty($errors)): ?>
                             <div class="alert alert-warning">
                                 <ul>
-                                    <?php 
-                                    foreach ($_SESSION['errors'] as $e) { ?>
-                                            <li><?=htmlspecialchars($e)?></li>
-                                    <?php 
-                                        }
-                                    ?>
+                                    <?php foreach ($errors as $e): ?>
+                                        <li><?= htmlspecialchars($e) ?></li>
+                                    <?php endforeach; ?>
                                 </ul>
-                        </div>
-                        <?php
-                            unset($_SESSION['errors']);
-                            } else { $error = null; }
-                        ?>
+                            </div>
+                        <?php endif; ?>
+
+                        
 
                         <input type="text" class="form-control" name="username" placeholder="Nama Pengguna" required>
                         <input type="password" id="password" class="form-control" name="password" placeholder="Kata Sandi" required>
