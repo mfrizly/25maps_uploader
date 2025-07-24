@@ -2,8 +2,11 @@
 
     session_start();
     
-    $pengguna = $_SESSION['user'];
-    $role = $_SESSION['role'];
+    require_once "../helper/session_protect.php";
+    allow_role(['admin']);
+
+    $pengguna = htmlspecialchars($_SESSION['user']);
+    $role = htmlspecialchars($_SESSION['role']);
     $halaman = "index";
     $judul_halaman = "Selamat Datang Admin";
 

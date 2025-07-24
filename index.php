@@ -3,9 +3,8 @@ require_once "helper/password_view.php";
 
 
 session_start();
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
+require_once "helper/csrf_token.php";
+$csrf_token = generate_csrf_token();
 
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == "user") {
@@ -41,7 +40,7 @@ if (isset($_SESSION['role'])) {
                 <div class="card-header text-center">Silahkan Masuk</div>
 
                 <div class="card-body">
-                    <form method="post" action="auth.php" class="d-grid gap-3">
+                    <form method="post" action="helper/auth.php" class="d-grid gap-3">
                         
                         <?php
                             if (isset($_SESSION['errors'])) { 
@@ -63,7 +62,7 @@ if (isset($_SESSION['role'])) {
 
                         <input type="text" class="form-control" name="username" placeholder="Nama Pengguna" required>
                         <input type="password" id="password" class="form-control" name="password" placeholder="Kata Sandi" required>
-                        <input type="hidden" name="token" value="<?=$_SESSION['csrf_token']?>" required>
+                        <input type="hidden" name="csrf_token" value="<?=$csrf_token?>" required>
                         <div>
                             <input type="checkbox" id="togglePassword"> <span>Lihat Kata Sandi</span>
                         </div>

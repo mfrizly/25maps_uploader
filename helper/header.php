@@ -10,7 +10,7 @@
             case 'PGAKAPG':
                 return 'Peta Global Area Komoditi All PG';
                 break;
-            case 'PGAP':
+            case 'PGP':
                 return 'Peta Global Polos';
                 break;
             case 'PGSKNU':

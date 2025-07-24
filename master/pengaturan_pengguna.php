@@ -1,6 +1,11 @@
 <?php
-    $pengguna = "Master";
-    $role = "master";
+    session_start();
+    
+    require_once "../helper/session_protect.php";
+    allow_role(['master']);
+
+    $pengguna = htmlspecialchars($_SESSION['user']);
+    $role = htmlspecialchars($_SESSION['role']);
     $halaman = "pengaturan_pengguna";
     $judul_halaman = "Pengaturan Pengguna";
 

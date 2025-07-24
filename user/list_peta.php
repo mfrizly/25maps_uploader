@@ -1,6 +1,11 @@
 <?php
-    $pengguna = "User";
-    $role = "user";
+    session_start();
+    
+    require_once "../helper/session_protect.php";
+    allow_role(['user']);
+
+    $pengguna = htmlspecialchars($_SESSION['user']);
+    $role = htmlspecialchars($_SESSION['role']);
     $halaman = "list";
     $judul_halaman = "List Peta - User";
     $jenis_peta = htmlspecialchars($_GET['j']);

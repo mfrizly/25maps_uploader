@@ -1,7 +1,12 @@
 <?php
 
-    $pengguna = "Master";
-    $role = "master";
+    session_start();
+    
+    require_once "../helper/session_protect.php";
+    allow_role(['master']);
+
+    $pengguna = htmlspecialchars($_SESSION['user']);
+    $role = htmlspecialchars($_SESSION['role']);
     $halaman = "edit";
     $judul_halaman = "Edit Peta - Master";
     $jenis_peta = htmlspecialchars($_GET['j']);

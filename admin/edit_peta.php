@@ -1,5 +1,9 @@
 <?php
 
+    session_start();
+    require_once "../helper/session_protect.php";
+    allow_role(['admin']);
+
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "edit";
