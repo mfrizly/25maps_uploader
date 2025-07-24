@@ -1,0 +1,94 @@
+<?php
+    $pengguna = "User";
+    $role = "user";
+    $halaman = "list";
+    $judul_halaman = "List Peta - User";
+
+    require_once "../helper/header.php";
+    require_once "../helper/footer.php";
+
+?>
+
+<div class="container">
+    <hr>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Peta Global Area Wilayah</li>
+        </ol>
+    </nav>
+
+
+    <div class="card mb-4">
+        <div class="card-header fw-bold">Peta..</div>
+        <div class="card-body">
+            <div class="table-responsive p-2">
+                <table id="tablePeta" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Jenis Peta</th>
+                            <th>PG</th>
+                            <th>Tanggal</th>
+                            <th>PNG</th>
+                            <th>KML</th>
+                            <th>PDF</th>
+                            <th>Excel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Peta Wilayah</td>
+                            <td>PG1</td>
+                            <td>11/07/2025</td>
+                            <td><a href="#">bla.png</a></td>
+                            <td><a href="#">bla.kml</a></td>
+                            <td><a href="#">bla.pdf</a></td>
+                            <td><a href="#">bla.excel</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Peta Wilayah</td>
+                            <td>PG2</td>
+                            <td>11/07/2025</td>
+                            <td><a href="#">bla.png</a></td>
+                            <td><a href="#">bla.kml</a></td>
+                            <td><a href="#">bla.pdf</a></td>
+                            <td><a href="#">bla.excel</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Jenis Peta</th>
+                            <th>PG</th>
+                            <th>Tanggal</th>
+                            <th>PNG</th>
+                            <th>KML</th>
+                            <th>PDF</th>
+                            <th>Excel</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+    <hr>
+    <div class="mb-3">role: <?=$role?></div>
+
+
+</div>
+
+
+
+
+
+
+
+<?php
+    footerWeb($halaman);
+?>
