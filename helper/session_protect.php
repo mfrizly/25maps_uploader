@@ -1,5 +1,10 @@
 <?php
 
+if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
+    http_response_code(403);
+    exit('Akses langsung tidak diizinkan.');
+}
+
 if (!isset($_SESSION['user']) || !isset($_SESSION['role'])) {
     header("Location: ../index.php");
     exit;

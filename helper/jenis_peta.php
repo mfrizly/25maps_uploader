@@ -1,4 +1,10 @@
 <?php
+
+if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
+    http_response_code(403);
+    exit('Akses langsung tidak diizinkan.');
+}
+
 function jenisPeta(){ ?>
 <div class="row row-cols-1 row-cols-md-2 g-3 my-3">
         <div class="col">

@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
+    http_response_code(403);
+    exit('Akses langsung tidak diizinkan.');
+}
+
+
 require_once "csrf_token.php";
 require_once "users.php";
 
