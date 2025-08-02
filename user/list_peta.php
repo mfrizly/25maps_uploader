@@ -22,6 +22,9 @@
 ?>
 
 <div class="container">
+
+    <h1><?=$judul_halaman?></h1>
+
     <hr>
 
     <nav aria-label="breadcrumb">
@@ -36,7 +39,7 @@
         <div class="card-header fw-bold">Peta..</div>
         <div class="card-body">
             <div class="table-responsive p-2">
-                <table id="tablePeta" class="table table-hover">
+                <table id="table" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -46,7 +49,6 @@
                             <th>PNG</th>
                             <th>KML</th>
                             <th>PDF</th>
-                            <th>Excel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,7 +60,6 @@
                             <td><a href="#">bla.png</a></td>
                             <td><a href="#">bla.kml</a></td>
                             <td><a href="#">bla.pdf</a></td>
-                            <td><a href="#">bla.excel</a></td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -68,7 +69,6 @@
                             <td><a href="#">bla.png</a></td>
                             <td><a href="#">bla.kml</a></td>
                             <td><a href="#">bla.pdf</a></td>
-                            <td><a href="#">bla.excel</a></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -80,7 +80,6 @@
                             <th>PNG</th>
                             <th>KML</th>
                             <th>PDF</th>
-                            <th>Excel</th>
                         </tr>
                     </tfoot>
                 </table>

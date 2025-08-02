@@ -5,13 +5,14 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
     exit('Akses langsung tidak diizinkan.');
 }
 
-function footerWeb($halaman = null){
+function footerWeb($halaman = ""){
     if ($halaman == "list") { 
 ?>
             <script src="../lib/jquery/jquery-3.7.1.min.js"></script>
             <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="../lib/datatables/datatables.min.js"></script>
 
+            
             <!-- Script Datatables start -->
             <script>
 
@@ -30,9 +31,12 @@ function footerWeb($halaman = null){
 
 
         <script src="../lib/bootstrap/js/bootstrap.bundle.js"></script>
+        
         </body>
         </html>
 
 <?php }
 }
 ?>
+
+

@@ -11,8 +11,9 @@
     $judul_halaman = "List Peta - Admin";
     $jenis_peta = htmlspecialchars($_GET['j']);
 
-    require_once "../helper/footer.php";
     require_once "../helper/header.php";
+    require_once "../helper/footer.php";
+
 
     if (!isset($_GET['j'])) {
         header("Location: index.php");
@@ -22,7 +23,8 @@
 ?>
 
 <div class="container">
-    
+
+    <h1><?=$judul_halaman?></h1>
     <hr>
     
     <nav aria-label="breadcrumb">
@@ -44,6 +46,7 @@
                 <form method="post" class="d-grid gap-3">
                     
                     <input class="form-control" type="text" value="<?=kamusPeta($jenis_peta)?>" disabled>
+                    <input class="form-control" type="text" name="namapeta" placeholder="Masukkan Nama Peta">
                     <input type="hidden" name="wilayah" value="<?=$jenis_peta?>">
 
                     <select name="pg" class="form-select">
@@ -94,7 +97,6 @@
                             <th>PNG</th>
                             <th>KML</th>
                             <th>PDF</th>
-                            <th>Excel</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -107,7 +109,6 @@
                             <td><a href="#">bla.png</a></td>
                             <td><a href="#">bla.kml</a></td>
                             <td><a href="#">bla.pdf</a></td>
-                            <td><a href="#">bla.excel</a></td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -128,7 +129,6 @@
                             <td><a href="#">bla.png</a></td>
                             <td><a href="#">bla.kml</a></td>
                             <td><a href="#">bla.pdf</a></td>
-                            <td><a href="#">bla.excel</a></td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -151,7 +151,6 @@
                             <th>PNG</th>
                             <th>KML</th>
                             <th>PDF</th>
-                            <th>Excel</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
@@ -166,6 +165,7 @@
 
 
 </div>
+
 
 <?php
     footerWeb($halaman);

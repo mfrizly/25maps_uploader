@@ -11,7 +11,7 @@ if (!isset($_SESSION['user']) || !isset($_SESSION['role'])) {
     redirect_with("../index.php");
 }
 
-if (time() - $_SESSION['login_time'] > 18000) { // 5 jam
+if (time() - $_SESSION['login_time'] > 7200) { // 2 jam
     session_unset();
     session_destroy();
     redirect_with("../index.php");

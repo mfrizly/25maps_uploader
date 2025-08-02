@@ -23,6 +23,8 @@
 
 <div class="container">
 
+        <h1><?=$judul_halaman?></h1>
+
         <hr>
         
         <nav aria-label="breadcrumb">
@@ -46,6 +48,9 @@
                         <option value="PGST" <?php if ($jenis_peta == "PGST") echo "selected"?>>Peta Global Status Tanaman</option>
                         <option value="BA" <?php if ($jenis_peta == "BA") echo "selected"?>>Bolder Area</option>
                     </select>
+
+                    <input class="form-control" type="text" name="namapeta" placeholder="Masukkan Nama Peta">
+
                     <select name="pg" class="form-select">
                         <option selected>PG..</option>
                         <option value="PG1">PG1</option>
@@ -62,7 +67,7 @@
         </div>
 
         <div class="card mt-3">
-            <div class="card-header fw-bold">Edit PNG</div>
+            <div class="card-header fw-bold">Edit PNG - Hapus Dulu Sebelum Diganti</div>
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>Nama Gambar</div>
@@ -80,7 +85,7 @@
         </div>
 
          <div class="card mt-3">
-            <div class="card-header fw-bold">Edit KML</div>
+            <div class="card-header fw-bold">Edit KML - Hapus Dulu Sebelum Diganti</div>
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>Nama KML</div>
@@ -98,7 +103,7 @@
         </div>
 
         <div class="card mt-3">
-            <div class="card-header fw-bold">Edit PDF</div>
+            <div class="card-header fw-bold">Edit PDF - Hapus Dulu Sebelum Diganti</div>
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>Nama PDF</div>
@@ -111,24 +116,6 @@
                         <input type="file" class="form-control" id="pdf">
                     </div>
                     <input type="submit" class="btn btn-primary" value="Ganti PDF">             
-                </form>
-            </div>
-        </div>
-
-        <div class="card mt-3">
-            <div class="card-header fw-bold">Edit Excel</div>
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>Nama Excel</div>
-                    <a href="#" class="text-danger">Hapus</a>
-                </div>
-                <hr>
-                <form method="post">
-                    <div class="mb-3">
-                        <label for="excel" class="form-label">File excel</label>
-                        <input type="file" class="form-control" id="excel">
-                    </div>
-                    <input type="submit" class="btn btn-primary" value="Ganti Excel">             
                 </form>
             </div>
         </div>

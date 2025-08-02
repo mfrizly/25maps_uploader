@@ -43,8 +43,6 @@ foreach ($users as $user) {
                 header("Location: ../admin/index.php"); exit;
             case 'user':
                 header("Location: ../user/index.php"); exit;
-            case 'master':
-                header("Location: ../master/index.php"); exit;
         }
     }
 }

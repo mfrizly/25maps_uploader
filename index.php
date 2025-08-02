@@ -40,10 +40,15 @@ $csrf_token = generate_csrf_token();
     <title>Selamat Datang</title>
 
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+     <link rel="icon" type="image/x-icon" href="lib/img/ggf.png">
 </head>
 <body class="bg-dark-subtle">
     <div class="position-relative" style="height: 100vh; width: 100vw;">
         <div class="position-absolute top-50 start-50 translate-middle">
+            <div class="text-center mb-4">
+                <img src="lib/img/ggf.png" width="200" alt="" style="pointer-events: none;">
+            </div>
+
             <div class="card bg-light" style="width: 50vw;">
                 <div class="card-header text-center">Silahkan Masuk</div>
 

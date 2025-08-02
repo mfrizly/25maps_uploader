@@ -7,7 +7,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "index";
-    $judul_halaman = "Selamat Datang User";
+    $judul_halaman = "Dashboard - User";
 
     require_once "../helper/header.php";
     require_once "../helper/footer.php";
@@ -17,6 +17,9 @@
 ?>
 
 <div class="container">
+
+    <h1><?=$judul_halaman?></h1>
+    <hr>
 
     <?php jenisPeta(); ?>
     
