@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "+07:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -25,14 +25,17 @@ SET time_zone = "+00:00";
 
 --
 -- Table structure for table `data_marginal`
---
+
 
 CREATE TABLE `data_marginal` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nama_peta` varchar(255) NOT NULL,
   `tanggal_upload` date NOT NULL,
-  `excel_file` varchar(255) NOT NULL
+  `excel_file` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -41,47 +44,26 @@ CREATE TABLE `data_marginal` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(255) NOT NULL UNIQUE,
   `password` varchar(255) NOT NULL,
   `role` enum('user','admin') NOT NULL DEFAULT 'user',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `data_marginal`
---
-ALTER TABLE `data_marginal`
-  ADD PRIMARY KEY (`id`);
+INSERT INTO `users` (`username`, `password` , `role`) VALUES 
+('admin', '$2y$10$AtkLi4jnVpyBh5Gi3ctnwuBTrt17kOV.bEgqUjwT8bhgeAZJ3ZJFq', 'admin'),
+('user', '$2y$10$9WdsrhoxKL5gA2dX/.S/x.FNHz/1ClvsFvB5GG.RbA2tA/2KLqKzq', 'user'); 
 
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+ALTER TABLE `users` MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+ALTER TABLE `data_marginal` MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `data_marginal`
---
-ALTER TABLE `data_marginal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
