@@ -40,7 +40,7 @@
 
 
     <div class="card mb-4">
-        <div class="card-header fw-bold">Peta..</div>
+        <div class="card-header fw-bold">List Peta</div>
         <div class="card-body">
             <div class="table-responsive p-2">
                 <table id="table" class="table table-hover">
