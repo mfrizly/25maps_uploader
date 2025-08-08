@@ -5,6 +5,14 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
     exit('Akses langsung tidak diizinkan.');
 }
 
+function countDataPeta($jenis){
+        $conn = get_connection();
+        $query = "SELECT COUNT(jenis_peta) as jumlah FROM data_peta WHERE jenis_peta = ?";
+        $data = read($conn, $query, "s", [$jenis]);
+        $nilai = strval($data[0]['jumlah']);
+        return $nilai;
+}
+
 function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0, $ba = 0){ ?>
 <div class="row row-cols-1 row-cols-md-3 g-3 my-3">
         <div class="col">

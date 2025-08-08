@@ -3,13 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2025 at 01:50 PM
+-- Generation Time: Aug 08, 2025 at 06:44 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+07:00";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -25,10 +25,10 @@ SET time_zone = "+07:00";
 
 --
 -- Table structure for table `data_marginal`
-
+--
 
 CREATE TABLE `data_marginal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id` int(11) NOT NULL,
   `nama_peta` varchar(255) NOT NULL,
   `tanggal_upload` date NOT NULL,
   `excel_file` varchar(255) NOT NULL,
@@ -36,6 +36,24 @@ CREATE TABLE `data_marginal` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_peta`
+--
+
+CREATE TABLE `data_peta` (
+  `id` int(11) NOT NULL,
+  `jenis_peta` enum('PGAW','PGAJT','PGAKAPG','PGP','PGSKNU','PGST','BA') NOT NULL,
+  `nama_peta` varchar(255) NOT NULL,
+  `pg` enum('PG1','PG2','PG3','PG4','ALLPG') NOT NULL,
+  `tanggal_upload` date NOT NULL,
+  `png` varchar(255) NOT NULL,
+  `kml` varchar(255) NOT NULL,
+  `pdf` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -44,26 +62,67 @@ CREATE TABLE `data_marginal` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `username` varchar(255) NOT NULL UNIQUE,
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('user','admin') NOT NULL DEFAULT 'user',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `users`
+--
 
-INSERT INTO `users` (`username`, `password` , `role`) VALUES 
-('admin', '$2y$10$AtkLi4jnVpyBh5Gi3ctnwuBTrt17kOV.bEgqUjwT8bhgeAZJ3ZJFq', 'admin'),
-('user', '$2y$10$9WdsrhoxKL5gA2dX/.S/x.FNHz/1ClvsFvB5GG.RbA2tA/2KLqKzq', 'user'); 
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '$2y$10$AtkLi4jnVpyBh5Gi3ctnwuBTrt17kOV.bEgqUjwT8bhgeAZJ3ZJFq', 'admin', '2025-08-07 12:22:08', '2025-08-07 12:22:08'),
+(2, 'user', '$2y$10$9WdsrhoxKL5gA2dX/.S/x.FNHz/1ClvsFvB5GG.RbA2tA/2KLqKzq', 'user', '2025-08-07 12:22:08', '2025-08-07 12:22:08');
 
-ALTER TABLE `users` MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
-ALTER TABLE `data_marginal` MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `data_marginal`
+--
+ALTER TABLE `data_marginal`
+  ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `data_peta`
+--
+ALTER TABLE `data_peta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `data_marginal`
+--
+ALTER TABLE `data_marginal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `data_peta`
+--
+ALTER TABLE `data_peta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
-
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

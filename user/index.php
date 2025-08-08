@@ -13,6 +13,18 @@
     require_once "../helper/footer.php";
     require_once "../helper/jenis_peta.php";
 
+    require_once "../database/database.php";
+    require_once "../database/read.php";
+
+
+
+    $pgaw = countDataPeta("PGAW");
+    $pgajt = countDataPeta("PGAJT");
+    $pgakapg = countDataPeta("PGAKAPG");
+    $pgp = countDataPeta("PGP");
+    $pgsknu = countDataPeta("PGSKNU");
+    $pgst = countDataPeta("PGST");
+    $ba = countDataPeta("BA");
 
 ?>
 
@@ -21,7 +33,9 @@
     <h1><?=$judul_halaman?></h1>
     <hr>
 
-    <?php jenisPeta(); ?>
+    <?php
+        jenisPeta($pgaw, $pgajt, $pgakapg, $pgp, $pgsknu, $pgst, $ba); 
+    ?>
     
     <hr>
     <div class="mb-3">role: <?=$role?></div>

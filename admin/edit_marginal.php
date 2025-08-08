@@ -60,7 +60,7 @@
             
         ?>
         <div class="card">
-            <div class="card-header fw-bold">Edit Data Peta</div>
+            <div class="card-header fw-bold">Edit Data Marginal</div>
             <div class="card-body">
                 <form method="post" class="d-grid gap-3" action="../admin_model/edit_marginal.php">
 

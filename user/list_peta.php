@@ -48,42 +48,43 @@
                         <tr>
                             <th>No</th>
                             <th>Jenis Peta</th>
+                            <th>Nama Peta</th>
                             <th>PG</th>
                             <th>Tanggal</th>
-                            <th>PNG</th>
-                            <th>KML</th>
-                            <th>PDF</th>
                         </tr>
                     </thead>
                     <tbody>
+
+                        <?php
+                            $conn = get_connection();
+                            $query = "SELECT id, pg, tanggal_upload, jenis_peta, nama_peta FROM data_peta WHERE jenis_peta = ?";
+                            $data = read($conn, $query, "s", [$jenis_peta]);
+
+                            $no = 1;
+                        
+                            foreach ($data as $d) {
+                                
+                            
+                        ?>
+
                         <tr>
-                            <td>1</td>
-                            <td>Peta Wilayah</td>
-                            <td>PG1</td>
-                            <td>11/07/2025</td>
-                            <td><a href="#">bla.png</a></td>
-                            <td><a href="#">bla.kml</a></td>
-                            <td><a href="#">bla.pdf</a></td>
+                            <td><?=$no++?></td>
+                            <td><?=kamusPeta($d['jenis_peta'])?></td>
+                            <td><a href="data_peta.php?id=<?=$d['id']?>&j=<?=$jenis_peta?>"> <?=$d['nama_peta']?> </a></td>
+                            <td><?=$d['pg']?></td>
+                            <td><?=$d['tanggal_upload']?></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Peta Wilayah</td>
-                            <td>PG2</td>
-                            <td>11/07/2025</td>
-                            <td><a href="#">bla.png</a></td>
-                            <td><a href="#">bla.kml</a></td>
-                            <td><a href="#">bla.pdf</a></td>
-                        </tr>
+
+                        <?php } ?>
+                        
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>No</th>
                             <th>Jenis Peta</th>
+                            <th>Nama Peta</th>
                             <th>PG</th>
                             <th>Tanggal</th>
-                            <th>PNG</th>
-                            <th>KML</th>
-                            <th>PDF</th>
                         </tr>
                     </tfoot>
                 </table>

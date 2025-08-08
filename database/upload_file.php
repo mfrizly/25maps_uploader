@@ -37,7 +37,7 @@ function upload_file(array $file, array $allowedTypes, string $destinationDir): 
 
     // Sanitasi nama dan buat nama unik
     $safeName   = preg_replace('/[^a-zA-Z0-9_-]/', '_', $originalName);
-    $datePrefix = date('Ymd-His');
+    $datePrefix = date('Ymd_His');
     $newName    = "{$datePrefix}_{$safeName}.{$extension}";
     $fullPath   = rtrim($destinationDir, '/') . '/' . $newName;
 
