@@ -1,6 +1,6 @@
 <?php
 
-require_once "redirect_helper.php";
+require_once "../helper/redirect_helper.php";
 
 redirect_with("../index.php");
 
