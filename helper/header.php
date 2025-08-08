@@ -50,14 +50,20 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_outward" />
         <style>
             .card-hover:hover {
-                background-color: #13ba21ff;
+                background-color: #19c928ff;
                 color: whitesmoke;
             }
 
             body {
-                background-color: #e7e7e7ff;
+                background: #ffffff;
+                background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(199, 195, 87, 1) 50%, rgba(255, 255, 255, 1) 100%);
             }
 
+            .gradient-card {
+                color: aliceblue;
+                background: #006ee3;
+                background: linear-gradient(180deg,rgba(0, 110, 227, 1) 0%, rgba(0, 55, 115, 1) 100%);
+            }
         </style>
 
     </head>
@@ -88,6 +94,12 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
             <a href="index.php" class="link-offset-2 link-underline link-underline-opacity-0"> 
             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#5985E1"><path d="M264-216h96v-240h240v240h96v-348L480-726 264-564v348Zm-72 72v-456l288-216 288 216v456H528v-240h-96v240H192Zm288-327Z"/></svg>
             | Dashboard
+            </a>
+        </div>
+        <div class="shadow p-3 rounded fw-bold">
+            <a href="peta.php" class="link-offset-2 link-underline link-underline-opacity-0"> 
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="20px" fill="#5985E1"><path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"/></svg>
+            | Data Peta
             </a>
         </div>
         <div class="shadow p-3 rounded fw-bold">

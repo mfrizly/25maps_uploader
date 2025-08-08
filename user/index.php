@@ -34,7 +34,7 @@
     <hr>
 
     <?php
-        jenisPeta($pgaw, $pgajt, $pgakapg, $pgp, $pgsknu, $pgst, $ba); 
+        dashboardPeta($pgaw, $pgajt, $pgakapg, $pgp, $pgsknu, $pgst, $ba); 
     ?>
     
     <hr>

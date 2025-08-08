@@ -36,7 +36,8 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active"><a href="list_peta.php?j=<?=$jenis_peta?>"> <?= kamusPeta($jenis_peta)?></a></li>
+            <li class="breadcrumb-item"><a href="peta.php">Data Peta</a></li>
+            <li class="breadcrumb-item"><a href="list_peta.php?j=<?=$jenis_peta?>"> <?= kamusPeta($jenis_peta)?></a></li>
             <li class="breadcrumb-item active" aria-current="page"> Data Peta</li>
         </ol>
     </nav>
@@ -63,7 +64,7 @@
 
     <hr>
 
-    <div class="row">
+    <div class="row g-3 my-3">
         <div class="col-md-4">
             <div class="card">
               <div class="card-body text-center">
