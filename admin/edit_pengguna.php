@@ -11,7 +11,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "edit_pengguna";
-    $judul_halaman = "Edit Pengguna";
+    $judul_halaman = "Edit Pengguna - Admin";
 
     require_once "../helper/header.php";
     require_once "../helper/footer.php";

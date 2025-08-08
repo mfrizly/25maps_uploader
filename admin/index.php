@@ -8,7 +8,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "index";
-    $judul_halaman = "Dashboard Admin";
+    $judul_halaman = "Dashboard - Admin";
 
     require_once "../helper/footer.php";
     require_once "../helper/header.php";

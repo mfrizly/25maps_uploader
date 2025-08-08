@@ -10,7 +10,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "data_peta";
-    $judul_halaman = "Data Peta - Admin";
+    $judul_halaman = "Data Peta - User";
     $jenis_peta = htmlspecialchars($_GET['j']);
     $id_peta = htmlspecialchars($_GET['id']);
 
