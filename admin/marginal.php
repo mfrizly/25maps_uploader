@@ -63,7 +63,7 @@
             <div class="accordion-body">
                 <form method="post" action="../admin_model/tambah_marginal.php" class="d-grid gap-3" enctype="multipart/form-data">
                     
-                    <input class="form-control" type="text" name="namapeta" placeholder="Masukkan Nama Peta" required>
+                    <input class="form-control" type="text" name="namapeta" placeholder="Masukkan Data" required>
                     <input class="form-control" type="date" name="tanggal"   required>
                     <input class="form-control" type="file" name="excel_file" accept=".xls,.xlsx" required>
                     <input type="hidden" name="csrf_token" value="<?=$csrf_token?>">
