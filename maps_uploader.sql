@@ -44,7 +44,7 @@ CREATE TABLE `data_marginal` (
 
 CREATE TABLE `data_peta` (
   `id` int(11) NOT NULL,
-  `jenis_peta` enum('PGAW','PGAJT','PGAKAPG','PGP','PGSKNU','PGST','BA') NOT NULL,
+  `jenis_peta` enum('PGAW','PGAJT','PGAKAPG','PGP','PGSKNU','PGST') NOT NULL,
   `nama_peta` varchar(255) NOT NULL,
   `pg` enum('PG1','PG2','PG3','PG4','ALLPG') NOT NULL,
   `tanggal_upload` date NOT NULL,

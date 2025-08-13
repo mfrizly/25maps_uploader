@@ -13,10 +13,10 @@ function countDataPeta($jenis){
         return $nilai;
 }
 
-function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0, $ba = 0){ ?>
+function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0){ ?>
 <div class="row row-cols-1 row-cols-md-3 g-3 my-3">
         <div class="col">
-            <div class="card card-hover">
+            <div class="card card-hover h-100">
                 <div class="card-body">
                     <div class="fs-1">Peta Global Area Wilayah</div>
                     <div class="card-footer">
@@ -26,7 +26,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
             </div>
         </div>
         <div class="col">
-            <div class="card card-hover">
+            <div class="card card-hover h-100">
                 <div class="card-body">
                     <div class="fs-1">Peta Global Area Jenis Tanaman</div>
                     <div class="card-footer">
@@ -36,7 +36,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
             </div>
         </div>
         <div class="col">
-            <div class="card card-hover">
+            <div class="card card-hover h-100">
                 <div class="card-body">
                     <div class="fs-1">Peta Global Area Komoditi All PG</div>
                     <div class="card-footer">
@@ -46,7 +46,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
             </div>
         </div>
         <div class="col">
-            <div class="card card-hover">
+            <div class="card card-hover h-100">
                 <div class="card-body">
                     <div class="fs-1">Peta Global Selain Komoditi Non Utama</div>
                     <div class="card-footer">
@@ -56,7 +56,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
             </div>
         </div>
         <div class="col">
-            <div class="card card-hover">
+            <div class="card card-hover h-100">
                 <div class="card-body">
                     <div class="fs-1">Peta Global Status Tanaman</div>
                     
@@ -67,21 +67,11 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
             </div>
         </div>
         <div class="col">
-            <div class="card card-hover">
+            <div class="card card-hover h-100">
                 <div class="card-body">
-                    <div class="fs-1">Peta Global Polos</div>
-                    <div class="card-footer">
+                    <div class="fs-1">Peta Global <div class="text-break"> Polos</div></div>
+                    <div class="card-footer align-self-end">
                         <a href="list_peta.php?j=PGP" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card-hover">
-                <div class="card-body">
-                    <div class="fs-1">Bolder Area</div>
-                    <div class="card-footer">
-                        <a href="list_peta.php?j=BA" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -93,8 +83,8 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
 <?php } ?>
 
 <?php
-function dashboardPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0, $ba = 0){ ?>
-<div class="row row-cols-1 row-cols-md-2 g-3 my-3">
+function dashboardPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0,){ ?>
+    <div class="row row-cols-1 row-cols-md-2 g-3 my-3">
         <div class="col">
             <div class="card gradient-card">
                 <div class="card-header fw-bold">Peta Global Area Wilayah</div>
@@ -151,16 +141,6 @@ function dashboardPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 
                 <div class="card-body">
                     <div class="card-title">
                         <div class="fs-1 fw-bold"><?=$pgst?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card gradient-card">
-                <div class="card-header fw-bold">Bolder Area</div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="fs-1"><?=$ba?></div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "index";
-    $judul_halaman = "Dashboard - Admin";
+    $judul_halaman = "Selamat Datang - $pengguna";
 
     require_once "../helper/footer.php";
     require_once "../helper/header.php";
@@ -25,7 +25,6 @@
     $pgp = countDataPeta("PGP");
     $pgsknu = countDataPeta("PGSKNU");
     $pgst = countDataPeta("PGST");
-    $ba = countDataPeta("BA");
 ?>
  
 <div class="container">       
@@ -38,13 +37,13 @@
     
 
     <?php 
-    dashboardPeta($pgaw, $pgajt, $pgakapg, $pgp, $pgsknu, $pgst, $ba);
+    dashboardPeta($pgaw, $pgajt, $pgakapg, $pgp, $pgsknu, $pgst);
     
     ?>
     
     
     <hr>
-    <div class="mb-3 fs-6">role: <?=$role?></div>
+    <div class="mb-3 fs-6">pennguna: <?=$pengguna?> | role: <?=$role?></div>
 
 
 

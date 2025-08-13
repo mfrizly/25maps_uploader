@@ -11,7 +11,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "edit";
-    $judul_halaman = "Edit Marginal - Admin";
+    $judul_halaman = "Edit Marginal - $pengguna";
 
     require_once "../helper/footer.php";
     require_once "../helper/header.php";
@@ -78,7 +78,7 @@
         <div class="card mt-3">
             <div class="card-header fw-bold">Edit Excel</div>
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center table-responsive">
                     <div><?=$d['excel_file']?></div>
                 </div>
                 <hr>
@@ -98,7 +98,7 @@
     
         <hr>
    
-        <div class="mb-3">role: <?=$role?></div>
+        <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 
 
 </div>

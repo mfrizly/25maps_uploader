@@ -9,7 +9,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "list";
-    $judul_halaman = "Pengaturan Pengguna - Admin";
+    $judul_halaman = "Pengaturan Pengguna - $pengguna";
 
     require_once "../helper/header.php";
     require_once "../helper/footer.php";
@@ -150,7 +150,7 @@
     
 
     <hr>
-    <div class="mb-3">role: <?=$role?></div>
+    <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 </div>
 
 

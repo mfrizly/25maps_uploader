@@ -12,7 +12,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "edit";
-    $judul_halaman = "Edit Peta - Admin";
+    $judul_halaman = "Edit Peta - $pengguna";
     $id_peta = htmlspecialchars($_GET['id']);
 
 
@@ -72,7 +72,6 @@
                         <option value="PGP" <?php if ($d['jenis_peta'] == "PGP") echo "selected"?> >Peta Global Polos</option>
                         <option value="PGSKNU" <?php if ($d['jenis_peta'] == "PGSKNU") echo "selected"?> >Peta Global Selain Komoditi Non Utama</option>
                         <option value="PGST" <?php if ($d['jenis_peta'] == "PGST") echo "selected"?> >Peta Global Status Tanaman</option>
-                        <option value="BA" <?php if ($d['jenis_peta'] == "BA") echo "selected"?> >Bolder Area</option>
                     </select>
 
                     <input class="form-control" type="text" name="namapeta" placeholder="Masukkan Nama Peta" value="<?=$d['nama_peta']?>" required>
@@ -97,7 +96,7 @@
         <div class="card mt-3">
             <div class="card-header fw-bold">Edit PNG</div>
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center table-responsive">
                     <div><?=$d['png']?></div>
                 </div>
                 <hr>
@@ -117,7 +116,7 @@
          <div class="card mt-3">
             <div class="card-header fw-bold">Edit KML</div>
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center table-responsive">
                     <div><?=$d['kml']?></div>
                 </div>
                 <hr>
@@ -137,7 +136,7 @@
         <div class="card mt-3">
             <div class="card-header fw-bold">Edit PDF</div>
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center table-responsive">
                     <div><?=$d['pdf']?></div>
                 </div>
                 <hr>
@@ -157,7 +156,7 @@
     
         <hr>
    
-        <div class="mb-3">role: <?=$role?></div>
+        <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 
 
 </div>

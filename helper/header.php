@@ -25,9 +25,6 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
             case 'PGST':
                 return 'Peta Global Status Tanaman';
                 break;
-            case 'BA':
-                return 'Bolder Area';
-                break;
             default:
                 return "tidak ada di kamus";
                 break;
@@ -61,9 +58,11 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
 
             .gradient-card {
                 color: aliceblue;
-                background: #006ee3;
-                background: linear-gradient(180deg,rgba(0, 110, 227, 1) 0%, rgba(0, 55, 115, 1) 100%);
+                background: #002752;
+                background: linear-gradient(180deg, rgba(0, 39, 82, 1) 25%, rgba(0, 121, 250, 1) 100%);
             }
+
+            
         </style>
 
     </head>
@@ -75,7 +74,7 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
             ☰
             </button>
 
-            <div class="fw-bold p-3">Marginal Land Planning & Land Mapping</div>
+            <div class="fw-bold p-3">Sistem Informasi Layout Peta Berbasis Web untuk Monitoring Lahan Perkebunan</div>
 
 
             <img src="../lib/img/ggf.png" width="80" alt="" style="pointer-events: none;">

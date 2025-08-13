@@ -80,7 +80,7 @@
 
     <hr>    
     
-    <div class="mb-3">role: <?=$role?></div>
+    <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 </div>
 
 

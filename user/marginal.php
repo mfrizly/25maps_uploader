@@ -7,7 +7,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "list";
-    $judul_halaman = "Data Marginal - User";
+    $judul_halaman = "Data Marginal - $pengguna";
 
 
     require_once "../helper/header.php";
@@ -90,7 +90,7 @@
     </div>
 
     <hr>
-    <div class="mb-3">role: <?=$role?></div>
+    <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 
 
 </div>

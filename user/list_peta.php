@@ -7,7 +7,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "list";
-    $judul_halaman = "List Peta - User";
+    $judul_halaman = "List Peta - $pengguna";
     $jenis_peta = htmlspecialchars($_GET['j']);
 
 
@@ -95,7 +95,7 @@
     </div>
 
     <hr>
-    <div class="mb-3">role: <?=$role?></div>
+    <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 
 
 </div>

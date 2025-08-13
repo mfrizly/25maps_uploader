@@ -8,7 +8,7 @@
     $pengguna = htmlspecialchars($_SESSION['user']);
     $role = htmlspecialchars($_SESSION['role']);
     $halaman = "peta";
-    $judul_halaman = "Data Peta - Admin";
+    $judul_halaman = "Data Peta - $pengguna";
 
     require_once "../helper/footer.php";
     require_once "../helper/header.php";
@@ -50,7 +50,7 @@
     
     
     <hr>
-    <div class="mb-3 fs-6">role: <?=$role?></div>
+    <div class="mb-3 fs-6">pengguna: <?=$pengguna?> | role: <?=$role?></div>
 
 
 
