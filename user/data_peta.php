@@ -103,12 +103,6 @@
     </div>
 
 
-    
-
-
-
-    <?php } ?>
-    
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -151,6 +145,12 @@
             </div>
         </div>
     </div>
+
+
+
+    <?php } ?>
+    
+    
     
 
     <hr>

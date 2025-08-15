@@ -109,52 +109,52 @@ if (!isset($_GET['id']) && !isset($_GET['j'])) {
                 </div>
             </div>
         </div>
-
-
-    <?php } ?>
-
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Lihat File PNG
-                </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body p-4">
-                    <img src="../storage/png/<?=$d['png']?>" alt="" loading="lazy" draggable="false" style="pointer-events: none; width: 100%;">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Lihat File PNG
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body p-4">
+                        <img src="../storage/png/<?= $d['png'] ?>" alt="" loading="lazy" draggable="false" style="pointer-events: none; width: 100%;">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Lihat File KML
-                </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body p-4">
-                    <div class="text-center">
-                        <img src="../lib/img/kml.png" alt="" loading="lazy" draggable="none" style="pointer-events: none; width: 20%;">
-                        <hr>
-                        <div><?=$d['kml']?></div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Lihat File KML
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body p-4">
+                        <div class="text-center">
+                            <img src="../lib/img/kml.png" alt="" loading="lazy" draggable="none" style="pointer-events: none; width: 20%;">
+                            <hr>
+                            <div><?= $d['kml'] ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Lihat data PDF
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body p-4">
+                        <iframe class="w-100" style="height: 100vh;" src="../storage/pdf/<?= $d['pdf'] ?>" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Lihat data PDF
-                </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body p-4">
-                    <iframe class="w-100" style="height: 100vh;" src="../storage/pdf/<?=$d['pdf']?>" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <?php } ?>
+
+
 
 
 
