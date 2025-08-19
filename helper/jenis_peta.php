@@ -20,7 +20,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
                 <div class="card-body">
                     <div class="fs-1">Peta Global Area Wilayah</div>
                     <div class="card-footer">
-                        <a href="list_peta.php?j=PGAW" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
+                        <a href="list_peta.php?j=PGAW" class="float-end" data-toggle="tooltip" data-placement="top" title="Klik Untuk melihat dan menambah data"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
                 <div class="card-body">
                     <div class="fs-1">Peta Global Area Jenis Tanaman</div>
                     <div class="card-footer">
-                        <a href="list_peta.php?j=PGAJT" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
+                        <a href="list_peta.php?j=PGAJT" class="float-end" data-toggle="tooltip" data-placement="top" title="Klik Untuk melihat dan menambah data"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
                 <div class="card-body">
                     <div class="fs-1">Peta Global Area Komoditi All PG</div>
                     <div class="card-footer">
-                        <a href="list_peta.php?j=PGAKAPG" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
+                        <a href="list_peta.php?j=PGAKAPG" class="float-end" data-toggle="tooltip" data-placement="top" title="Klik Untuk melihat dan menambah data"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
                 <div class="card-body">
                     <div class="fs-1">Peta Global Selain Komoditi Non Utama</div>
                     <div class="card-footer">
-                        <a href="list_peta.php?j=PGSKNU" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
+                        <a href="list_peta.php?j=PGSKNU" class="float-end" data-toggle="tooltip" data-placement="top" title="Klik Untuk melihat dan menambah data"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
                     <div class="fs-1">Peta Global Status Tanaman</div>
                     
                     <div class="card-footer">
-                        <a href="list_peta.php?j=PGST" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
+                        <a href="list_peta.php?j=PGST" class="float-end" data-toggle="tooltip" data-placement="top" title="Klik Untuk melihat dan menambah data"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
                 <div class="card-body">
                     <div class="fs-1">Peta Global <div class="text-break"> Polos</div></div>
                     <div class="card-footer align-self-end">
-                        <a href="list_peta.php?j=PGP" class="float-end"> <span class="material-symbols-outlined">arrow_outward</span> </a>
+                        <a href="list_peta.php?j=PGP" class="float-end" data-toggle="tooltip" data-placement="top" title="Klik Untuk melihat dan menambah data"> <span class="material-symbols-outlined">arrow_outward</span> </a>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@ function jenisPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $
 <?php } ?>
 
 <?php
-function dashboardPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0,){ ?>
+function dashboardPeta($pgaw = 0, $pgajt = 0, $pgakapg = 0, $pgp = 0, $pgsknu = 0, $pgst = 0){ ?>
     <div class="row row-cols-1 row-cols-md-2 g-3 my-3">
         <div class="col">
             <div class="card gradient-card">

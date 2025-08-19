@@ -13,10 +13,14 @@
 
     require_once "../helper/header.php";
     require_once "../helper/footer.php";
+    require_once "../helper/redirect_helper.php";
 
     require_once "../database/database.php";
     require_once "../database/read.php";
     
+
+    $data = get_redirect_data();
+    $pesans = $data["pesans"] ?? [];
 
     if (!isset($_GET['j'])) {
     header("Location: index.php");
@@ -39,6 +43,16 @@
         </ol>
     </nav>
 
+    <?php if (!empty($pesans)): ?>
+        <div class="alert alert-warning">
+            <ul>
+                <?php foreach ($pesans as $p): ?>
+                    <li><?= htmlspecialchars($p) ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
 
     <div class="card mb-4">
         <div class="card-header fw-bold">List Peta</div>
@@ -59,11 +73,11 @@
                         <?php
                             $conn = get_connection();
                             $query = "SELECT id, pg, tanggal_upload, jenis_peta, nama_peta FROM data_peta WHERE jenis_peta = ?";
-                            $data = read($conn, $query, "s", [$jenis_peta]);
+                            $datas = read($conn, $query, "s", [$jenis_peta]);
 
                             $no = 1;
                         
-                            foreach ($data as $d) {
+                            foreach ($datas as $d) {
                                 
                             
                         ?>

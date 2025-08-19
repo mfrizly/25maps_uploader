@@ -69,7 +69,7 @@ if (!isset($_GET['id']) && !isset($_GET['j'])) {
                         <hr>
                         Download
                         <br>
-                        <a href="../storage/png/<?= $d['png'] ?>" download>
+                        <a href="../helper/a_download.php?file=<?=$d['png']?>&id=<?=$id_peta?>$j=<?=$jenis_peta?>&type=png">
                             <?= $d['png'] ?>
                         </a>
                     </div>
@@ -86,7 +86,7 @@ if (!isset($_GET['id']) && !isset($_GET['j'])) {
                         <hr>
                         Download
                         <br>
-                        <a href="../storage/kml/<?= $d['kml'] ?>" download>
+                        <a href="../helper/a_download.php?file=<?=$d['kml']?>&id=<?=$id_peta?>$j=<?=$jenis_peta?>&type=kml">
                             <?= $d['kml'] ?>
                         </a>
                     </div>
@@ -102,7 +102,7 @@ if (!isset($_GET['id']) && !isset($_GET['j'])) {
                         </svg>
                         <hr>
                         Download
-                        <a href="../storage/pdf/<?= $d['pdf'] ?>" download="<?= $d['pdf'] ?>">
+                        <a href="../helper/a_download.php?file=<?=$d['pdf']?>&id=<?=$id_peta?>$j=<?=$jenis_peta?>&type=pdf">
                             <?= $d['pdf'] ?>
                         </a>
                     </div>

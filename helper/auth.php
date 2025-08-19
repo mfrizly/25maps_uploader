@@ -10,7 +10,6 @@ if (!isset($_SESSION['_auth_access'])) {
 unset($_SESSION['_auth_access']); 
 
 require_once "csrf_token.php";
-require_once "users.php";
 require_once "redirect_helper.php";
 require_once "../database/database.php";
 require_once "../database/handle_login.php";

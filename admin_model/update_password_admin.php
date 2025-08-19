@@ -13,6 +13,7 @@ require_once "../database/cud.php";
 
 require_once "../helper/redirect_helper.php";
 require_once "../helper/csrf_token.php";
+require_once "../helper/password_validator.php";
 
 
 $pesans = [];
@@ -26,6 +27,8 @@ if ($password_satu != $password_kedua) {
 
 if (!validate_csrf_token($_POST['csrf_token'] ?? '')) {
     $pesans[] = "CSRF token tidak valid.";
+} elseif (!validatePassword($password_satu)) {
+    $pesans[] = "Password harus 1 huruf besar, 1 huruf kecil, 1 angka, 1 simbol dan minimal 8 karakter";
 } else {
     $conn = get_connection();
     $query = "UPDATE users SET password=? WHERE username = 'admin' AND role='admin'";

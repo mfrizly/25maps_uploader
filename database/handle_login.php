@@ -27,7 +27,10 @@ function handle_login(mysqli $conn, string $username, string $password): array {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    if ($user && password_verify($password, $user['password'])) {
+    if ($result->num_rows === 0){
+        $errors[] = "Username tidak ada";
+    } else {
+        if (password_verify($password, $user['password'])) {
         session_regenerate_id(true);
         $_SESSION['user'] = $user['username'];
         $_SESSION['role'] = $user['role'];
@@ -46,9 +49,12 @@ function handle_login(mysqli $conn, string $username, string $password): array {
             default:
                 $errors[] = "Role tidak dikenali.";
         }
+        
     } else {
-        $errors[] = "Username atau password salah.";
+            $errors[] = "Password salah";
+        }
     }
+    
 
     $stmt->close();
     $conn->close();

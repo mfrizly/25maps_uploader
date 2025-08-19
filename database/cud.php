@@ -38,19 +38,4 @@ function cud(
 }
 
 
-// untuk manggil
 
-// $conn = get_connection();
-// $success = cud($conn, "UPDATE maps SET title = ? WHERE id = ?", "si", [$title, $id]);
-
-// if ($success) {
-//     if ($jenis_peta && $id) {
-//         header("Location: $halaman_redirect?j=$jenis_peta&id=$id&pesan=$jenis_eksekusi");
-//         exit;
-//     } else {
-//         redirect_with($halaman_redirect, ["success" => "$jenis_eksekusi"]);
-//     }
-// } else {
-//     redirect_with($halaman_redirect, ["errors" => ["Gagal menjalankan perintah."]]);
-// }
-// $conn->close();
