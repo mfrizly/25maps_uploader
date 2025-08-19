@@ -68,7 +68,7 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
     </head>
     <body>
 
-    <div class="container shadow p-3 mb-5 bg-body-tertiary rounded">
+    <div class="container shadow p-3 mb-5 bg-body-tertiary rounded sticky-top">
         <div class="d-flex justify-content-between align-items-center">
             <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
             ☰

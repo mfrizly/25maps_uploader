@@ -63,7 +63,8 @@
                 <div class="accordion-body">
                 <form method="post" action="../admin_model/update_password_admin.php" class="d-grid gap-3">
                     <input type="password" class="form-control" id="passwordPertama" name="password_pertama" placeholder="Masukkan Password Baru" required>
-                    <input type="password" class="form-control" id="passwordKedua" name="password_kedua" placeholder="Ulangi Password Baru" required>
+                    <input type="password" class="form-control" id="passwordKedua" name="password_kedua" placeholder="Ulangi Password Baru" required aria-describedby="passwordAdminHelp">
+                    <div id="passwordAdminHelp" class="form-text">Password harus mengandung 1 huruf besar, 1 huruf kecil, 1 simbol, 1 angka dan minimal 8 karakter</div>
                     <input type="hidden" name="csrf_token" value="<?=$csrf_token?>">
                     <div>
                         <input type="checkbox" id="togglePassword"> <span>Lihat Kata Sandi</span>
@@ -82,7 +83,8 @@
         <div class="card-body">
             <form method="post" action="../admin_model/buat_pengguna.php" class=" d-grid gap-3">            
                 <input type="text" class="form-control" name="username" placeholder="Masukkan Nama Pengguna" required>
-                <input type="password" class="form-control" id="passwordUser" name="password_user" placeholder="Masukkan Kata Sandi" required>
+                <input type="password" class="form-control" id="passwordUser" name="password_user" placeholder="Masukkan Kata Sandi" required aria-describedby="passwordHelp">
+                <div id="passwordHelp" class="form-text">Password harus mengandung 1 huruf besar, 1 huruf kecil, 1 simbol, 1 angka dan minimal 8 karakter</div>
                 <input type="hidden" name="csrf_token" value="<?=$csrf_token?>">
                 <div>
                     <input type="checkbox" id="togglePasswordUser"> <span>Lihat Kata Sandi</span>

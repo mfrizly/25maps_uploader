@@ -62,7 +62,8 @@
         
             <form method="post" action="../admin_model/edit_pengguna.php" class=" d-grid gap-3">            
                 <input type="text" class="form-control" name="username" placeholder="Masukkan Nama Pengguna" value="<?=$d['username']?>" required>
-                <input type="password" class="form-control" id="passwordUser" name="password_user" placeholder="Masukkan Kata Sandi" value="" required>
+                <input type="password" class="form-control" id="passwordUser" name="password_user" placeholder="Masukkan Kata Sandi" aria-describedby="passwordHelp" required>
+                <div id="passwordHelp" class="form-text">Password harus mengandung 1 huruf besar, 1 huruf kecil, 1 simbol, 1 angka dan minimal 8 karakter</div>
                 <input type="hidden" name="id" value="<?=$id?>" required>
                 <input type="hidden" name="csrf_token" value="<?=$csrf_token?>">
                 <div>
