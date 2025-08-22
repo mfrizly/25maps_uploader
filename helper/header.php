@@ -74,7 +74,7 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
             ☰
             </button>
 
-            <div class="fw-bold p-3">Sistem Informasi Layout Peta Berbasis Web untuk Monitoring Lahan Perkebunan</div>
+            <div class="fw-bold p-3">SISTEM INFORMASI PEMETAAN LAHAN BERBASIS WEB</div>
 
 
             <img src="../lib/img/ggf.png" width="80" alt="" style="pointer-events: none;">
